@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+.text-center{
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    /* background-color: #f0f0f0; */
+    border-radius: 5px;
+}
+
+h1, h2 {
+    color: #4a4a4a;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+   
+
+}
+
+th, td  {
+    border: 1px solid black;
+   
+}
+h3{
+    text-align: center;
+}
+
+th, td {
+    padding: 4px;
+    text-align: left;
+   
+}
+
+th {
+    /* background-color: #f2f2f2; */
+    color: #4a4a4a;
+}
+.head{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <img src="img.png" alt="logo">
+        <p style="font-size: 10px;">Apt. 940 79300 Mauro Rapids, Port Ariel, ND 36375-8390</p>
+        </div>
+        <br>
+        <br>
+        <h3> Earning(s) Statement for the month of {{month}}/{{year}}</h3>
+        <table style="font-size: 14px;">
+            <tr>
+                <th>Employee code</th>
+                <td>NA</td>
+                <th>Employee Name</th>
+                <td>{{employee_name}}</td>
+            </tr>
+            <tr>
+                <th>UAN</th>
+                {% if uan_no %}
+                <td>{{uan_no}}</td>
+                {% else %}
+                <td>NA</td>
+                {% endif %}
+                <th>ESIC Account</th>
+                <td>NA</td>
+            </tr>
+            <tr>
+                <th>Bank Account No.</th>
+                {% if bank_acc %}
+                <td>{{bank_acc}}</td>
+                {% else %}
+                <td>NA</td>
+                {% endif %}
+                <th>PAN No.</th>
+                {% if pan_no %}
+                <td>{{pan_no}}</td>
+                {% else %}
+                <td>NA</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{Designation}}</td>
+                <th>Department</th>
+                <td>{{Department}}</td>
+            </tr>
+            
+           
+        </table>
+<br>
+        <table>
+            <tr>
+                <th>Date of Joining</th>
+                <td>{{doj}}</td>
+                <th>Days Paid</th>
+                <td>{{DaysPaid}}</td>
+            </tr>
+            
+            <tr>
+                <th>Days Present</th>
+                <td>{{DaysPresent}}</td>
+                <th>Days Absent</th>
+                <td>{{DaysAbsent}}</td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <th>Earnings</th>
+                <td>Amount(INR)</td>
+                <th>Deductions</th>
+                <td>Amount(INR)</td>
+            </tr>
+
+            <tr>
+                <th>Basic</th>
+                <td>{{basic_salary}}</td>
+                <th>PT</th>
+                {% if pt %}
+                <td>{{pt}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>HRA</th>
+                {% if hra %}
+                <td>{{hra}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+                <th>PF</th>
+                {% if pf %}
+                <td>{{pf}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Medical Allowance</th>
+                {% if medical %}
+                <td>{{medical}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+                <th>ESIC</th>
+                {% if ESIC  %}
+                <td>{{ESIC}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>Standard DA</th>
+                {% if std_da %}
+                <td>{{std_da}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+                <th></th>
+                <td> </td>
+            </tr>
+            <tr>
+                <th>Conveyance</th>
+                {% if conveyence %}
+                <td>{{conveyence}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+                <th></th>
+                <td> </td>
+            </tr>
+            <tr>
+                <th>Educational Allowance</th>
+                {% if educational_allowance %}
+                <td>{{educational_allowance}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+                <th></th>
+                <td> </td>
+            </tr>
+           
+            <tr>
+                <th>Other Allowance</th>
+                {% if otherAllowance %}
+                <td>{{otherAllowance}}</td>
+                {% else %}
+                <td>0</td>
+                {% endif %}
+                <th></th>
+                <td> </td>
+            </tr>
+            <tr>
+                <th>Gross Salary
+                    (INR)</th>
+                <td>{{additions}}</td>
+                <th>Gross Deduction
+                    (INR)</th>
+                <td>{{deductions}}</td>
+            </tr>
+            <tr>
+                <th colspan="2">Net Salary</th>
+                <td colspan="2">{{net_salary}}</td>
+            </tr>
+        </table>
+        <br>
+        <p class="text-center"><b>Amount in words(INR): </b>{{word}}</p>
+        <br>
+
+        <p class="text-center" style="font-size: 12px;">This is a System generated report and does not require signature & stamp*</p>
+
+        
+</body>
+</html>
